@@ -40,6 +40,11 @@ def generate_youtube_short_script(prompt):
 
     # Extract the assistant's reply
     script = response["choices"][0]["message"]["content"].strip()
+
+    # Save the script in the txt for the future record.
+    with open("script.txt", "w") as f:
+        f.write(script)
+    
     return script
 
 
