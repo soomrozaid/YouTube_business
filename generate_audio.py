@@ -17,7 +17,7 @@ def generate_youtube_short_script(prompt):
 
     # System message to guide the assistant
     system_message = (
-        "You are a creative scriptwriter tasked with creating engaging, 1-minute YouTube short scripts "
+        "You are a creative scriptwriter tasked with creating engaging, YouTube short scripts "
         "tailored for a Gen-Z audience. The script should be lively, informative, and contain only the spoken content "
         "without any scene descriptions, stage directions, or bracketed content."
     )
@@ -32,7 +32,7 @@ def generate_youtube_short_script(prompt):
             {"role": "system", "content": system_message},
             {"role": "user", "content": user_message},
         ],
-        max_tokens=200,  # Adjust as needed to limit the length
+        max_tokens=500,  # Adjust as needed to limit the length
         temperature=0.7,
         n=1,
         stop=None,
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     print(youtube_script)
 
     # Convert the script to speech and save as WAV
-    text_to_speech(youtube_script, filename="youtube_short.wav")
+    text_to_speech(youtube_script, filename="audio.wav")
 
 # if __name__ == "__main__":
 #     print(ENV)
